@@ -1,7 +1,12 @@
-import PacientResultHeader from 'components/PacientResult/PacientResultHeader';
+import PacientResultCard from 'components/PacientResult/PacientResultCard';
+import PacientResultContent from 'components/PacientResult/PacientResultContent';
 
 const PacientInfoContainer = () => {
-  return <PacientResultHeader />;
+  return (
+    <PacientResultContent>
+      <PacientResultCard />
+    </PacientResultContent>
+  );
 };
 
 export default PacientInfoContainer;

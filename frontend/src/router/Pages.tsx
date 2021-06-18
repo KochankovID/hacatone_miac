@@ -1,3 +1,4 @@
+import AuthPage from 'AuthPage';
 import CardListPage from 'containers/CardListPage';
 import PacientInfo from 'containers/PacientInfo';
 import { useSelector } from 'react-redux';
@@ -12,7 +13,7 @@ const Pages = () => {
         <CardListPage />
       </PageWrapper>
 
-      {/* <AuthPage /> */}
+      <AuthPage />
     </>
   );
 };
