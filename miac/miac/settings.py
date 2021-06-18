@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "debug_toolbar",
     "users",
+    "mesurement",
 ]
 
 SITE_ID = 1
@@ -173,4 +174,3 @@ STATIC_URL = "/django/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = ('127.0.0.1:1883', 'localhost:1883',)
