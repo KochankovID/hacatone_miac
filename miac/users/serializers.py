@@ -1,13 +1,12 @@
 import django.contrib.auth.password_validation as validators
 from django.core import exceptions
-from phonenumber_field.serializerfields import PhoneNumberField
 from rest_framework import serializers
 
 from .models import User
 
 
 class RegisterSerializer(serializers.Serializer):
-    username = PhoneNumberField(required=True)
+    username = serializers.RegexField(regex='^\d{3}-\d{3}-\d{3}-\d{2}$')
     email = serializers.EmailField(required=True)
     password1 = serializers.CharField(write_only=True)
     password2 = serializers.CharField(write_only=True)

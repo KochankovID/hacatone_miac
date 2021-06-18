@@ -40,11 +40,13 @@ INSTALLED_APPS = [
     "corsheaders",
     "debug_toolbar",
     "users",
+    "mesurement",
 ]
 
 SITE_ID = 1
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -53,7 +55,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
-    # "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "miac.urls"
@@ -138,7 +139,7 @@ JWT_AUTH_COOKIE = "miac-auth"
 JWT_AUTH_REFRESH_COOKIE = "miac-refresh"
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=10),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,

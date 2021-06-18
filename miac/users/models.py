@@ -1,8 +1,8 @@
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
+from django.core.validators import RegexValidator
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
 
 
 class UserManager(BaseUserManager):
@@ -59,7 +59,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         ('Admin', 'Admin'),
     )
 
-    username = PhoneNumberField(db_index=True, max_length=255, unique=True)
+    username = models.CharField(db_index=True, max_length=255, unique=True,
+                                validators=[RegexValidator('^\d{3}-\d{3}-\d{3}-\d{2}$')])
     email = models.EmailField(db_index=True, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
