@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "debug_toolbar",
     "users",
-    "mesurement",
+    "measurement",
 ]
 
 SITE_ID = 1

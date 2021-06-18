@@ -2,12 +2,12 @@ from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
 
 from users.models import User
-from .models import Mesurement, Recomendation
+from .models import Measurement, Recomendation
 
 
-class MesurementSerializer(ModelSerializer):
+class MeasurementSerializer(ModelSerializer):
     class Meta:
-        model = Mesurement
+        model = Measurement
         fields = '__all__'
 
 
@@ -17,12 +17,12 @@ class RecomendationSerializer(ModelSerializer):
         fields = '__all__'
 
 
-class UserMesurementHistorySerializer(ModelSerializer):
-    mesurement = MesurementSerializer(many=True)
+class UserMeasurementHistorySerializer(ModelSerializer):
+    measurement = MeasurementSerializer(many=True)
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'mesurement')
+        fields = ('username', 'email', 'first_name', 'last_name', 'measurement')
 
 
 class UserRecomendationHistorySerializer(ModelSerializer):
