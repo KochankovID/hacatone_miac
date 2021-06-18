@@ -1,0 +1,48 @@
+.auth-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 300px;
+  margin-top: 300px;
+  width: 85%;
+  background-color: #fff;
+  box-shadow: 6px 1px 20px rgb(69 65 78 / 10%);
+}
+
+.auth-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+}
+
+.auth__link {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  font-size: 16px;
+}
+.auth-header__btn {
+  min-width: 50%;
+  display: flex;
+  justify-content: center;
+  border-bottom: #000;
+}
+.auth__btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-wrapper {
+  padding: 24px;
+}
+
+.auth-header__btn.active {
+  background: #40a9ff;
+  color: #fff;
+}
+
+.auth-header__btn.active:hover {
+  color: #000;
+}
