@@ -5,21 +5,79 @@ const PacientResultCard = () => {
     <div className="pacient-info__card">
       <div className="pacient-info__card-header">
         <span className="pacient-info__card-header__title">
-          Информация о пациенте
+          Предыдущие показания
         </span>
       </div>
       <div className="pacient-info__card-content">
-        <div className="card__firstname">
-          <p>Имя</p>
-          <p>Анатолий</p>
+        <div className="card-content_header">
+          <p className="text__title">Диастолическое давление</p>
+          <p className="text__title">Cистолическое давление</p>
+          <p className="text__title">Пульс</p>
+          <p className="text__title">Тип</p>
+          <p className="text__title">Дата</p>
         </div>
-        <div className="card__lastname">
-          <p>Фамилия</p>
-          <p>Стольник</p>
+        <div className="card__text">
+          <p className="text__content">123</p>
+          <p className="text__content">80</p>
+          <p className="text__content">60</p>
+          <p className="text__content">Подъем на 5 этаж</p>
+          <p className="text__content">23.06.2020</p>
         </div>
-        <div className="card__age">
-          <p>Дата рождения</p>
-          <p>23.09.1967</p>
+        <div className="card__text">
+          <p className="text__content">123</p>
+          <p className="text__content">80</p>
+          <p className="text__content">60</p>
+          <p className="text__content">Подъем на 5 этаж</p>
+          <p className="text__content">23.06.2020</p>
+        </div>
+        <div className="card__text">
+          <p className="text__content">123</p>
+          <p className="text__content">80</p>
+          <p className="text__content">60</p>
+          <p className="text__content">Подъем на 5 этаж</p>
+          <p className="text__content">23.06.2020</p>
+        </div>
+        <div className="card__text">
+          <p className="text__content">123</p>
+          <p className="text__content">80</p>
+          <p className="text__content">60</p>
+          <p className="text__content">Подъем на 5 этаж</p>
+          <p className="text__content">23.06.2020</p>
+        </div>
+        <div className="card__text">
+          <p className="text__content">123</p>
+          <p className="text__content">80</p>
+          <p className="text__content">60</p>
+          <p className="text__content">Подъем на 5 этаж</p>
+          <p className="text__content">23.06.2020</p>
+        </div>
+        <div className="card__text">
+          <p className="text__content">123</p>
+          <p className="text__content">80</p>
+          <p className="text__content">60</p>
+          <p className="text__content">Подъем на 5 этаж</p>
+          <p className="text__content">23.06.2020</p>
+        </div>
+        <div className="card__text">
+          <p className="text__content">123</p>
+          <p className="text__content">80</p>
+          <p className="text__content">60</p>
+          <p className="text__content">Подъем на 5 этаж</p>
+          <p className="text__content">23.06.2020</p>
+        </div>
+        <div className="card__text">
+          <p className="text__content">123</p>
+          <p className="text__content">80</p>
+          <p className="text__content">60</p>
+          <p className="text__content">Подъем на 5 этаж</p>
+          <p className="text__content">23.06.2020</p>
+        </div>
+        <div className="card__text">
+          <p className="text__content">123</p>
+          <p className="text__content">80</p>
+          <p className="text__content">60</p>
+          <p className="text__content">Подъем на 5 этаж</p>
+          <p className="text__content">23.06.2020</p>
         </div>
       </div>
     </div>

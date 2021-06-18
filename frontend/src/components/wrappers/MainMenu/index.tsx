@@ -6,6 +6,7 @@ import {
 } from '@ant-design/icons';
 import './style.css';
 import { Link } from 'react-router-dom';
+import { routes } from 'router/routes';
 
 const MainMenu = () => {
   return (
@@ -15,10 +16,10 @@ const MainMenu = () => {
           <Link to="/pacient-info"> Информация о пациенте</Link>
         </Menu.Item>
         <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-          <Link to="/card-list"> Карточки</Link>
+          <Link to={routes.CARD_LIST}> Карточки</Link>
         </Menu.Item>
         <Menu.Item key="3" icon={<UploadOutlined />}>
-          <Link to="/authorization"> Авторизация</Link>
+          <Link to={routes.PACIENT_DASHBOARD}> Графики</Link>
         </Menu.Item>
         <Menu.Item key="4" icon={<UserOutlined />}>
           nav 4

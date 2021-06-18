@@ -2,22 +2,22 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 import PrivateRoute from 'router/PrivateRoute';
 import { routes } from 'router/routes';
-import PacientResultContainer from './PacientResultContainer';
+import PacientDashboardContainer from './PacientDashboardContainer';
 
-const PacientResult = () => {
-  const pacientResultPage = [
+const PacientDashboard = () => {
+  const pacientDashboardPage = [
     {
-      component: PacientResultContainer,
-      path: routes.CARD_LIST,
+      component: PacientDashboardContainer,
+      path: routes.PACIENT_DASHBOARD,
       exact: true,
     },
   ];
   return (
     <Switch>
-      {pacientResultPage.map((page, i) => (
+      {pacientDashboardPage.map((page, i) => (
         <PrivateRoute {...page} key={`CardListPage${i}`} />
       ))}
     </Switch>
   );
 };
-export default PacientResult;
+export default PacientDashboard;
