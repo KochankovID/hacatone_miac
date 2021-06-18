@@ -18,7 +18,7 @@ const MainMenu = () => {
           <Link to="/card-list"> Карточки</Link>
         </Menu.Item>
         <Menu.Item key="3" icon={<UploadOutlined />}>
-          nav 3
+          <Link to="/authorization"> Авторизация</Link>
         </Menu.Item>
         <Menu.Item key="4" icon={<UserOutlined />}>
           nav 4
