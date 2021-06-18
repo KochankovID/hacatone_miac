@@ -169,7 +169,7 @@ CACHES = {
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "sessions"
 
-STATIC_URL = "/static/"
+STATIC_URL = "/django/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 CORS_ORIGIN_ALLOW_ALL = True

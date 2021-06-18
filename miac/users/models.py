@@ -11,7 +11,7 @@ class UserManager(BaseUserManager):
                     email,
                     first_name,
                     last_name,
-                    role,
+                    role=None,
                     password=None):
 
         if username is None:
