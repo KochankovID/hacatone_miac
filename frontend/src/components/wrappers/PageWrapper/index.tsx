@@ -12,10 +12,10 @@ const PageWrapper = (props: any) => {
           <div className="header__menu" />
         </div>
       </header>
+      <MainMenu />
       <div className="container">
         <div className="page__content">
           <div className="page__layout">
-            <MainMenu />
             <div className="main__content">{children}</div>
           </div>
         </div>

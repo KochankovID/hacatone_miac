@@ -1,0 +1,11 @@
+.pacient-info__header {
+  display: flex;
+  justify-content: space-between;
+  min-height: 60px;
+  padding: 0 16px;
+}
+
+.pacient-info__content {
+  display: flex;
+  justify-content: space-between;
+}

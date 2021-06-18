@@ -12,7 +12,7 @@ const MainMenu = () => {
     <div className="sidebar">
       <Menu mode="inline" defaultSelectedKeys={['4']}>
         <Menu.Item key="1" icon={<UserOutlined />}>
-          <Link to="/registration"> Регистрация</Link>
+          <Link to="/pacient-info"> Информация о пациенте</Link>
         </Menu.Item>
         <Menu.Item key="2" icon={<VideoCameraOutlined />}>
           <Link to="/card-list"> Карточки</Link>
