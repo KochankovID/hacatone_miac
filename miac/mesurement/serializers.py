@@ -24,3 +24,10 @@ class UserMesurementHistorySerializer(ModelSerializer):
         model = User
         fields = ('username', 'email', 'first_name', 'last_name', 'mesurement')
 
+
+class UserRecomendationHistorySerializer(ModelSerializer):
+    recomendation = RecomendationSerializer(many=True)
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'first_name', 'last_name', 'recomendation')
