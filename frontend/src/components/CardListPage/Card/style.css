@@ -1,0 +1,20 @@
+.card {
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  min-height: 60px;
+  padding: 0 16px;
+}
+.card__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:not(:first-child) {
+  margin-top: 16px;
+}
