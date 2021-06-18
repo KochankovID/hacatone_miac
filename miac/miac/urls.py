@@ -24,7 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/auth/", include("dj_rest_auth.urls")),
     path("api/auth/registration/", include("dj_rest_auth.registration.urls")),
-    path('api/', include(('mesurement.urls', 'mesurement_api'), namespace='mesurement_api')),
+    path('api/', include(('measurement.urls', 'mesurement_api'), namespace='mesurement_api')),
     url(
         r"^swagger(?P<format>\.json|\.yaml)$",
         schema_view.without_ui(cache_timeout=0),

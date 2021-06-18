@@ -1,15 +1,15 @@
 from rest_framework import viewsets, generics
 from rest_framework.permissions import AllowAny
 
-from mesurement.models import Mesurement, Recomendation
-from mesurement.serializers import MesurementSerializer, RecomendationSerializer, UserMesurementHistorySerializer, \
+from measurement.models import Measurement, Recomendation
+from measurement.serializers import MeasurementSerializer, RecomendationSerializer, UserMeasurementHistorySerializer, \
     UserRecomendationHistorySerializer
 from users.models import User
 
 
-class MesurementCRUDView(viewsets.ModelViewSet):
-    queryset = Mesurement.objects.all()
-    serializer_class = MesurementSerializer
+class MeasurementCRUDView(viewsets.ModelViewSet):
+    queryset = Measurement.objects.all()
+    serializer_class = MeasurementSerializer
     permission_classes = (AllowAny,)
 
 
@@ -19,9 +19,9 @@ class RecomendationCRUDView(viewsets.ModelViewSet):
     permission_classes = (AllowAny,)
 
 
-class PatientMesurementHistoryView(generics.RetrieveAPIView):
+class PatientMeasurementHistoryView(generics.RetrieveAPIView):
     queryset = User.objects.all()
-    serializer_class = UserMesurementHistorySerializer
+    serializer_class = UserMeasurementHistorySerializer
     permission_classes = (AllowAny,)
 
 
