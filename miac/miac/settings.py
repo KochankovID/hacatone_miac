@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "users",
     "measurement",
     "django_any",
+    "django_filters",
 ]
 
 SITE_ID = 1
