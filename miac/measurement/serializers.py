@@ -36,6 +36,6 @@ class UserRecomendationHistorySerializer(ModelSerializer):
         model = User
         fields = ('username', 'email', 'first_name', 'last_name', 'recomendation')
 
-    def get_measurement(self, instance):
+    def get_recomendation(self, instance):
         players = instance.recomendation.order_by('created_at')
         return RecomendationSerializer(players, many=True).data
