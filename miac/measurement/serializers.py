@@ -1,5 +1,6 @@
-from rest_framework import serializers
+from rest_framework.fields import SerializerMethodField
 from rest_framework.serializers import ModelSerializer
+from rest_framework import serializers
 
 from users.models import User
 from .models import Measurement, Recomendation
@@ -18,16 +19,24 @@ class RecomendationSerializer(ModelSerializer):
 
 
 class UserMeasurementHistorySerializer(ModelSerializer):
-    measurement = MeasurementSerializer(many=True)
+    measurement = SerializerMethodField()
 
     class Meta:
         model = User
         fields = ('username', 'email', 'first_name', 'last_name', 'measurement')
 
+    def get_measurement(self, instance):
+        players = instance.measurement.order_by('created_at')
+        return MeasurementSerializer(players, many=True).data
+
 
 class UserRecomendationHistorySerializer(ModelSerializer):
-    recomendation = RecomendationSerializer(many=True)
+    recomendation = SerializerMethodField()
 
     class Meta:
         model = User
         fields = ('username', 'email', 'first_name', 'last_name', 'recomendation')
+
+    def get_recomendation(self, instance):
+        players = instance.recomendation.order_by('created_at')
+        return RecomendationSerializer(players, many=True).data

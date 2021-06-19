@@ -1,0 +1,34 @@
+@startuml
+!theme bluegray
+'title "структура хранения данных"
+skinparam backgroundColor #
+
+skinparam svgLinkTarget _parent
+
+entity "Пациент" as user {
+    * ** снилс **
+    * email
+    * логин
+    * имя
+    * фамилия
+}
+
+entity "Измерение" as measurement {
+    * верхнее давление
+    * нижнее давление
+    * пульс
+    * сатурация
+    * тип
+    * пациент
+}
+
+entity "Рекомендация" as recomendation {
+    * текст рекомендации
+    * имя доктора
+    * пульс
+    * пациент
+}
+
+measurement }o-left- user
+recomendation }o-right- user
+@enduml
