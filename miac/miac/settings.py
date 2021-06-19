@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "users",
     "measurement",
+    "django_any",
 ]
 
 SITE_ID = 1

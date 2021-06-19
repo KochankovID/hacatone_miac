@@ -10,6 +10,8 @@ class Measurement(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     patient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='measurement')
+    saturation = models.IntegerField(null=True)
+    type = models.CharField(blank=False, null=False, max_length=255)
 
 
 class Recomendation(models.Model):
