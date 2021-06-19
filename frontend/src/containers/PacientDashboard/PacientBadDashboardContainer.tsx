@@ -1,7 +1,16 @@
 import PacientBadDashbordsContent from 'components/PacientDashboard/PacientBadDashbordsContent';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMeasurmentsAction } from 'store/PacientDashboard/actions';
+import { getMeasurements } from 'store/PacientDashboard/selectors';
 
 const PacientDashboardContainer = () => {
-  return <PacientBadDashbordsContent />;
+  const dispatch = useDispatch();
+  const measurementsData = useSelector(getMeasurements);
+  useEffect(() => {
+    dispatch(getMeasurmentsAction(1));
+  }, []);
+  return <PacientBadDashbordsContent measurementsData={measurementsData} />;
 };
 
 export default PacientDashboardContainer;

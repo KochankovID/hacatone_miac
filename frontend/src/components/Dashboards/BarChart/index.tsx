@@ -1,4 +1,5 @@
 import { Radio } from 'antd';
+import { parseDate } from 'helpers';
 import { useState } from 'react';
 import Chart from 'react-apexcharts';
 import './style.css';
@@ -11,9 +12,10 @@ const BarChart = ({
   trim = true,
   oneColor = false,
 }: any) => {
-  const barData = [data, weekData];
-  const [chartState, setChartState] = useState(0);
-  console.log(chartState);
+  // const barData = [data, weekData];
+  // const [chartState, setChartState] = useState(0);
+  // console.log(chartState);
+
   const state = {
     options: {
       dataLabels: {
@@ -28,6 +30,31 @@ const BarChart = ({
           dataLabels: {
             position: 'top', // top, center, bottom
           },
+          backgroundBarColors: ['#25e595'],
+          // colors: {
+          //   ranges: [
+          //     {
+          //       from: 70,
+          //       to: 85,
+          //       color: '#25e595',
+          //     },
+          //     {
+          //       from: 110,
+          //       to: 130,
+          //       color: '#25e595',
+          //     },
+          //     {
+          //       from: 131,
+          //       to: 250,
+          //       color: '#e52552',
+          //     },
+          //     {
+          //       from: 0,
+          //       to: 74,
+          //       color: '#e52552',
+          //     },
+          //   ],
+          // },
         },
       },
       stroke: {
@@ -37,7 +64,7 @@ const BarChart = ({
       },
 
       xaxis: {
-        categories: barData[chartState].map((el: any) => el.name),
+        categories: data.map((el: any) => parseDate(el.created_at)),
         tickPlacement: 'on',
         labels: {
           trim: false,
@@ -61,11 +88,11 @@ const BarChart = ({
     series: [
       {
         name: 'Cистолическое',
-        data: barData[chartState].map((el: any) => el.top),
+        data: data.map((el: any) => el.pressure_high),
       },
       {
         name: 'Диастолическое',
-        data: barData[chartState].map((el: any) => el.bottom),
+        data: data.map((el: any) => el.pressure_low),
       },
     ],
   };
@@ -73,24 +100,24 @@ const BarChart = ({
     // <ChartsWrapper title={title} subtitle={subtitle}>
     <div className="chart-wrapper wide">
       <h3>Давление</h3>
-      <Radio.Group
+      {/* <Radio.Group
         defaultValue="a"
         buttonStyle="solid"
         onChange={(evt) => {
           console.log(evt.target.value);
-          setChartState(evt.target.value);
+          // setChartState(evt.target.value);
         }}
       >
         <Radio.Button value={3}>2 месяца</Radio.Button>
         <Radio.Button value={2}>Месяц</Radio.Button>
         <Radio.Button value={1}>Неделя</Radio.Button>
         <Radio.Button value={0}>День</Radio.Button>
-      </Radio.Group>
+      </Radio.Group> */}
       <Chart
         options={state.options}
         series={state.series}
         type="bar"
-        height={300}
+        height={400}
         width="100%"
       />
     </div>

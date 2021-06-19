@@ -3,50 +3,26 @@ import BarChart2 from 'components/Dashboards/BarChart2';
 import BarChart3 from 'components/Dashboards/BarChart3';
 import BarChart4 from 'components/Dashboards/BarChart4';
 import DashboardCard from 'components/Dashboards/Card';
+import DateRange from 'components/Dashboards/DateRange';
 import './style.css';
 
-const PacientDashbordsContent = ({ children }: any) => {
-  const data = [
-    { name: '21.03.21 - у', top: 156, bottom: 80 },
-    { name: '21.03.21 - о', top: 136, bottom: 85 },
-    { name: '21.03.21 - д', top: 126, bottom: 96 },
-    { name: '21.03.21 - в', top: 116, bottom: 79 },
-  ];
-  const weekData = [
-    { name: '21.03.21 - у', top: 156, bottom: 80 },
-    { name: '21.03.21 - о', top: 136, bottom: 85 },
-    { name: '21.03.21 - в', top: 116, bottom: 79 },
-    { name: '23.03.21 - д', top: 115, bottom: 79 },
-    { name: '23.03.21 - в', top: 136, bottom: 96 },
-    { name: '24.03.21 - у', top: 156, bottom: 80 },
-    { name: '26.03.21 - у', top: 116, bottom: 85 },
-    { name: '26.03.21 - о', top: 111, bottom: 81 },
-    { name: '26.03.21 - д', top: 115, bottom: 79 },
-    { name: '27.03.21 - о', top: 111, bottom: 81 },
-    { name: '27.03.21 - д', top: 115, bottom: 79 },
-    { name: '27.03.21 - в', top: 136, bottom: 96 },
-  ];
-  const data2 = [
-    { name: '21.03.21', value: 40 },
-    { name: '22.03.21', value: 95 },
-
-    { name: '26.03.21', value: 140 },
-    { name: '26.03.21', value: 96 },
-    { name: '27.03.21', value: 115 },
-  ];
-  const data3 = [
-    { name: '21.03.21', value: 145 },
-    { name: '22.03.21', value: 140 },
-    { name: '23.03.21', value: 120 },
-    { name: '24.03.21', value: 99 },
-
-    { name: '26.03.21', value: 100 },
-    { name: '27.03.21', value: 91 },
-  ];
+const PacientDashbordsContent = ({ measurementsData }: any) => {
+  const pressureData = measurementsData.filter((el: any) => {
+    return (
+      el.pressure_high > 130 ||
+      el.pressure_high < 110 ||
+      el.pressure_low < 70 ||
+      el.pressure_low > 85
+    );
+  });
+  const pulseData = measurementsData.filter(
+    (el: any) => el.pulse > 80 || el.pulse < 60
+  );
+  const saturationData = measurementsData.filter((el: any) => el.pulse < 95);
   return (
     <>
       <div className="dashboard__header">
-        <h2>Аномальные показатели</h2>
+        <h2>Все показания</h2>
       </div>
       <div className="dashbord__wrapper">
         <DashboardCard
@@ -69,10 +45,16 @@ const PacientDashbordsContent = ({ children }: any) => {
           type="Прогулка"
           pulse={110}
         />
-        <BarChart data={data} weekData={weekData} />
-        <BarChart2 data={data2} />
-        {/* <BarChart3 data={data3} /> */}
-        <BarChart4 data={data3} />
+        <div className="dashboards__date-picker">
+          <h3 className="dashboards__date-picker__title">Выберете период</h3>
+          <div className="dashboards__date-picker__wrapper">
+            <DateRange />
+          </div>
+        </div>
+        <BarChart data={pressureData} />
+        {/* <BarChart2 data={data} /> */}
+        <BarChart3 data={pulseData} />
+        <BarChart4 data={saturationData} />
       </div>
     </>
   );

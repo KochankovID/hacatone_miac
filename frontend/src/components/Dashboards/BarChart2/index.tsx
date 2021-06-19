@@ -1,4 +1,5 @@
 import { Radio } from 'antd';
+import { parseDate } from 'helpers';
 import Chart from 'react-apexcharts';
 import './style.css';
 const BarChart = ({
@@ -41,7 +42,7 @@ const BarChart = ({
         },
       },
       xaxis: {
-        categories: data.map((el: any) => el.name),
+        categories: data.map((el: any) => parseDate(el.created_at)),
         labels: {
           trim: false,
           rotateAlways: true,

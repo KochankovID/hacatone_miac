@@ -1,4 +1,5 @@
 import { Radio } from 'antd';
+import { parseDate } from 'helpers';
 import Chart from 'react-apexcharts';
 import './style.css';
 const BarChart = ({
@@ -12,13 +13,29 @@ const BarChart = ({
     options: {
       chart: {
         // height: 100,
+        toolbar: {
+          show: true,
+        },
+        zoom: {
+          enabled: true,
+          autoScaleXaxis: true,
+        },
       },
       dataLabels: {
-        enabled: true,
+        offsetY: -15,
+        style: {
+          fontSize: '10px',
+          colors: ['#000'],
+        },
       },
+
       plotOptions: {
         bar: {
           //   distributed: true,
+          dataLabels: {
+            position: 'top', // top, center, bottom
+          },
+          columnWidth: '70%',
           colors: {
             ranges: [
               {
@@ -36,7 +53,8 @@ const BarChart = ({
         },
       },
       xaxis: {
-        categories: data.map((el: any) => el.name),
+        categories: data.map((el: any) => parseDate(el.created_at)),
+        tickPlacement: 'on',
         labels: {
           trim: false,
           rotateAlways: true,
@@ -59,7 +77,7 @@ const BarChart = ({
     series: [
       {
         name: 'Давление',
-        data: data.map((el: any) => el.value),
+        data: data.map((el: any) => el.pulse),
       },
     ],
   };
@@ -67,7 +85,7 @@ const BarChart = ({
     // <ChartsWrapper title={title} subtitle={subtitle}>
     <div className="chart-wrapper">
       <h3>Пульс</h3>
-      <Radio.Group
+      {/* <Radio.Group
         defaultValue="a"
         buttonStyle="solid"
         onChange={(evt) => {
@@ -78,7 +96,7 @@ const BarChart = ({
         <Radio.Button value={2}>Месяц</Radio.Button>
         <Radio.Button value={1}>Неделя</Radio.Button>
         <Radio.Button value={0}>День</Radio.Button>
-      </Radio.Group>
+      </Radio.Group> */}
       <Chart
         options={state.options}
         series={state.series}

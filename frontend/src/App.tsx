@@ -20,7 +20,7 @@ const App = () => {
       history.push(routes.AUTH);
     }
   }, []);
-  refreshToken();
+  // refreshToken();
   return (
     <Switch>
       <RouteWrapper exact path={pagePath}>

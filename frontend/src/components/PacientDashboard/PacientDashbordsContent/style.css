@@ -1,6 +1,21 @@
 .dashbord__wrapper {
+  position: relative;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
+}
+
+.dashboards__date-picker {
+  width: 95%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  background-color: #fff;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.dashboards__date-picker__wrapper {
+  width: 40%;
 }

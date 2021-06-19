@@ -10,7 +10,7 @@ const AuthContainer = () => {
   const onSubmit = (value: any) => {
     console.log(value);
     axios
-      .post('http://127.0.0.1:1883/api/auth/login/', value)
+      .get('http://127.0.0.1:1883/api/measurements/1/')
       .then((res) => {
         console.log(res.data);
         TokenStorage.storeToken(res.data.data.accessToken);
