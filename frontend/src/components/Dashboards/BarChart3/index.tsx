@@ -21,18 +21,13 @@ const BarChart = ({
           colors: {
             ranges: [
               {
-                from: 100,
-                to: 130,
+                from: 50,
+                to: 84,
                 color: '#25e595',
               },
               {
-                from: 0,
-                to: 99,
-                color: '#e52552',
-              },
-              {
-                from: 131,
-                to: 200,
+                from: 85,
+                to: 150,
                 color: '#e52552',
               },
             ],
@@ -70,7 +65,7 @@ const BarChart = ({
   return (
     // <ChartsWrapper title={title} subtitle={subtitle}>
     <div className="chart-wrapper">
-      Диастолическое давление
+      Пульс
       <Chart
         options={state.options}
         series={state.series}
