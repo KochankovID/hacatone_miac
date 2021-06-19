@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 import rstr
 
-from measurement.factories import MeasurementFactory
+from measurement.factories import MeasurementFactory, RecomendationFactory
 from measurement.models import Measurement
 from users.factories import UserFactory, SuperUserFactory
 from users.models import User
@@ -29,4 +29,4 @@ class Command(BaseCommand):
 
         for user in User.objects.all():
             for _ in range(NUM_RECOMENDATIONS):
-                MeasurementFactory(patient=user)
+                RecomendationFactory(patient=user)
