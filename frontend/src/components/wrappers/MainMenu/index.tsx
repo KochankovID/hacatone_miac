@@ -15,11 +15,11 @@ const MainMenu = () => {
         <Menu.Item key="1" icon={<UserOutlined />}>
           <Link to="/pacient-info"> Информация о пациенте</Link>
         </Menu.Item>
-        <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-          <Link to={routes.CARD_LIST}> Карточки</Link>
-        </Menu.Item>
-        <Menu.Item key="3" icon={<UploadOutlined />}>
+        <Menu.Item key="2" icon={<UploadOutlined />}>
           <Link to={routes.PACIENT_DASHBOARD}> Графики</Link>
+        </Menu.Item>
+        <Menu.Item key="3" icon={<VideoCameraOutlined />}>
+          <Link to={routes.RECOMENDATION}> Рекомендации</Link>
         </Menu.Item>
         <Menu.Item key="4" icon={<UserOutlined />}>
           nav 4
