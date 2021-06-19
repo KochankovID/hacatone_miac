@@ -21,9 +21,6 @@ const MainMenu = () => {
         <Menu.Item key="3" icon={<VideoCameraOutlined />}>
           <Link to={routes.RECOMENDATION}> Рекомендации</Link>
         </Menu.Item>
-        <Menu.Item key="4" icon={<UserOutlined />}>
-          nav 4
-        </Menu.Item>
       </Menu>
     </div>
   );
