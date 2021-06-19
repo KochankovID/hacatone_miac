@@ -15,67 +15,38 @@ const PacientDashbordsContent = ({ children }: any) => {
   const weekData = [
     { name: '21.03.21 - у', top: 156, bottom: 80 },
     { name: '21.03.21 - о', top: 136, bottom: 85 },
-    { name: '21.03.21 - д', top: 126, bottom: 96 },
     { name: '21.03.21 - в', top: 116, bottom: 79 },
-    { name: '22.03.21 - у', top: 136, bottom: 91 },
-    { name: '22.03.21 - о', top: 166, bottom: 100 },
-    { name: '22.03.21 - д', top: 146, bottom: 96 },
-    { name: '22.03.21 - в', top: 116, bottom: 70 },
-    { name: '23.03.21 - у', top: 116, bottom: 85 },
-    { name: '23.03.21 - о', top: 111, bottom: 81 },
     { name: '23.03.21 - д', top: 115, bottom: 79 },
     { name: '23.03.21 - в', top: 136, bottom: 96 },
     { name: '24.03.21 - у', top: 156, bottom: 80 },
-    { name: '24.03.21 - о', top: 136, bottom: 85 },
-    { name: '24.03.21 - д', top: 126, bottom: 96 },
-    { name: '24.03.21 - в', top: 116, bottom: 79 },
-    { name: '25.03.21 - у', top: 136, bottom: 91 },
-    { name: '25.03.21 - о', top: 166, bottom: 100 },
-    { name: '25.03.21 - д', top: 146, bottom: 96 },
-    { name: '25.03.21 - в', top: 116, bottom: 70 },
     { name: '26.03.21 - у', top: 116, bottom: 85 },
     { name: '26.03.21 - о', top: 111, bottom: 81 },
     { name: '26.03.21 - д', top: 115, bottom: 79 },
-    { name: '26.03.21 - в', top: 136, bottom: 96 },
-    { name: '27.03.21 - у', top: 116, bottom: 85 },
     { name: '27.03.21 - о', top: 111, bottom: 81 },
     { name: '27.03.21 - д', top: 115, bottom: 79 },
     { name: '27.03.21 - в', top: 136, bottom: 96 },
   ];
   const data2 = [
-    { name: '21.03.21', value: 80 },
-    { name: '22.03.21', value: 85 },
-    { name: '23.03.21', value: 96 },
-    { name: '24.03.21', value: 79 },
-    { name: '25.03.21', value: 91 },
-    { name: '25.03.21', value: 100 },
+    { name: '21.03.21', value: 40 },
+    { name: '22.03.21', value: 95 },
+
+    { name: '26.03.21', value: 140 },
     { name: '26.03.21', value: 96 },
-    { name: '26.03.21', value: 70 },
-    { name: '27.03.21', value: 85 },
-    { name: '25.03.21', value: 81 },
-    { name: '26.03.21', value: 79 },
-    { name: '26.03.21', value: 96 },
-    { name: '27.03.21', value: 91 },
+    { name: '27.03.21', value: 115 },
   ];
   const data3 = [
-    { name: '21.03.21', value: 80 },
-    { name: '22.03.21', value: 60 },
-    { name: '23.03.21', value: 61 },
-    { name: '24.03.21', value: 63 },
-    { name: '25.03.21', value: 90 },
-    { name: '25.03.21', value: 65 },
-    { name: '26.03.21', value: 96 },
-    { name: '26.03.21', value: 60 },
-    { name: '27.03.21', value: 110 },
-    { name: '25.03.21', value: 81 },
-    { name: '26.03.21', value: 98 },
-    { name: '26.03.21', value: 60 },
+    { name: '21.03.21', value: 145 },
+    { name: '22.03.21', value: 140 },
+    { name: '23.03.21', value: 120 },
+    { name: '24.03.21', value: 99 },
+
+    { name: '26.03.21', value: 100 },
     { name: '27.03.21', value: 91 },
   ];
   return (
     <>
       <div className="dashboard__header">
-        <h2>Все показания</h2>
+        <h2>Аномальные показатели</h2>
       </div>
       <div className="dashbord__wrapper">
         <DashboardCard
