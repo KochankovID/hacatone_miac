@@ -9,7 +9,7 @@ const DateRange = () => {
     if (ranstartDate && endDateges) {
       dispatch(
         getPeriodMeasurmentsAction({
-          id: 140,
+          id: Number(sessionStorage.getItem('id')),
           start: ranstartDate,
           end: endDateges,
         })
