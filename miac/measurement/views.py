@@ -22,7 +22,6 @@ class RecomendationCRUDView(viewsets.ModelViewSet):
 
 class PatientMeasurementHistoryView(generics.RetrieveAPIView):
     queryset = User.objects.all()
-    filterset_fields = ['created_at']
 
     serializer_class = UserMeasurementHistorySerializer
     permission_classes = (AllowAny,)
