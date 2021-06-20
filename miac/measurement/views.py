@@ -40,7 +40,7 @@ class MeasurementHistoryView(generics.ListAPIView):
 
     def get_queryset(self):
         user_id = self.kwargs['pk']
-        return Measurement.objects.filter(patient=user_id)
+        return Measurement.objects.filter(patient=user_id).order_by('created_at')
 
 
 class RecomendationHistoryView(generics.ListAPIView):
@@ -49,4 +49,4 @@ class RecomendationHistoryView(generics.ListAPIView):
 
     def get_queryset(self):
         user_id = self.kwargs['pk']
-        return Recomendation.objects.filter(patient=user_id)
+        return Recomendation.objects.filter(patient=user_id).order_by('created_at')
