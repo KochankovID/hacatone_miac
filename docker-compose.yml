@@ -61,6 +61,11 @@ services:
     networks:
       - miac
 
+  frontend:
+    build: ./frontend/
+    volumes:
+      - './frontend/:/app'
+
 networks:
   miac:
     driver: bridge
