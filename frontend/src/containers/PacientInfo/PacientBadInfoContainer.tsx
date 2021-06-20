@@ -18,7 +18,7 @@ const PacientBadInfoContainer = () => {
       el.saturation < 95
   );
   useEffect(() => {
-    dispatch(getMeasurmentsAction(1));
+    dispatch(getMeasurmentsAction(140));
   }, []);
   return (
     <PacientResultContent>

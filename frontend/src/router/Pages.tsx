@@ -9,8 +9,8 @@ import PageWrapper from '../components/wrappers/PageWrapper';
 const Pages = ({ id, sessionId }: any) => {
   return (
     <>
-      {id ||
-        (sessionId && (
+      {/* {id ||
+        (sessionId !== 'undefined' && (
           <PageWrapper>
             <PacientInfo />
             <CardListPage />
@@ -18,7 +18,13 @@ const Pages = ({ id, sessionId }: any) => {
             <RecomendationPage />
           </PageWrapper>
         ))}
-      {!id && !sessionId && <ErrorPage />}
+      {!id && (sessionId === 'undefined' || !sessionId) && <ErrorPage />} */}
+      <PageWrapper>
+        <PacientInfo />
+        <CardListPage />
+        <PacientDashboard />
+        <RecomendationPage />
+      </PageWrapper>
       <AuthPage />
     </>
   );

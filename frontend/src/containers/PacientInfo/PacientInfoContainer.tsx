@@ -9,7 +9,7 @@ const PacientInfoContainer = () => {
   const dispatch = useDispatch();
   const measurementsData = useSelector(getMeasurements);
   useEffect(() => {
-    dispatch(getMeasurmentsAction(1));
+    dispatch(getMeasurmentsAction(140));
   }, []);
   return (
     <PacientResultContent>

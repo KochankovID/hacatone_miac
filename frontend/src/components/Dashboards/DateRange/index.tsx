@@ -21,7 +21,7 @@ const DateRange = () => {
       }
       minDate={new Date(1900, 0, 1)}
       maxDate={new Date(2100, 0, 1)}
-      dateFormat="D"
+      dateFormat="D MM YYYY"
       monthFormat="MMM YYYY"
       startDatePlaceholder="Start Date"
       endDatePlaceholder="End Date"

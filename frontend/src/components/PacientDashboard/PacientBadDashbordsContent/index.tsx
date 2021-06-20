@@ -24,7 +24,7 @@ const PacientDashbordsContent = ({ measurementsData }: any) => {
   return (
     <>
       <div className="dashboard__header">
-        <h2>Все показания</h2>
+        <h2>Аномальные показания</h2>
       </div>
       <div className="dashbord__wrapper">
         <DashboardCard
