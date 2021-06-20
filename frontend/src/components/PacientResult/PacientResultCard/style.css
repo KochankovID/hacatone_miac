@@ -14,7 +14,7 @@
 .card-content_header {
   display: grid;
   /* justify-content: space-between; */
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   border-bottom: 1px solid #eee;
 }
 
@@ -33,7 +33,7 @@
 }
 .card__text {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   min-height: 40px;
   border-bottom: 1px solid #eee;
 }
@@ -49,6 +49,6 @@
 .text__title {
   font-size: 16px;
   font-weight: 500;
-  min-width: 60px;
+  /* min-width: 60px; */
   text-align: center;
 }

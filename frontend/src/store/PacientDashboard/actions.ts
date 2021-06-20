@@ -4,6 +4,7 @@ import { baseUrl } from 'helpers';
 export enum PatientActions {
   getMeasurments = 'GET_MEASURMENTS',
   getPeriodMeasurments = 'GET_PERIOD_MEASURMENTS',
+  getPatientInfo = 'GET_PATIENT_INFO',
 }
 
 export const getMeasurmentsAction = (id: number) => {
@@ -26,6 +27,17 @@ export const getPeriodMeasurmentsAction = (value: {id: number, start: string, en
           created_at__lte: value.end,
         }});
       dispatch({ type: PatientActions.getMeasurments, payload: data });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};
+
+export const getPatientInfoAction = (id: number) => {
+  return async (dispatch: any) => {
+    try {
+      const { data } = await axios.get(`${baseUrl}/measurements/${id}`);
+      dispatch({ type: PatientActions.getPatientInfo, payload: data });
     } catch (e) {
       console.log(e);
     }

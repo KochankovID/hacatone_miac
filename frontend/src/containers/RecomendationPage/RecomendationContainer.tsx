@@ -17,7 +17,7 @@ const RecomendationContainer = () => {
     }
   );
   useEffect(() => {
-    dispatch(getRecomendationAction(140));
+    dispatch(getRecomendationAction(Number(sessionStorage.getItem('id'))));
   }, []);
   return (
     <>

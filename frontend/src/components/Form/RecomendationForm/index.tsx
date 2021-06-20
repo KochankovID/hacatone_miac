@@ -9,7 +9,12 @@ import './style.css';
 const RecomendationForm = () => {
   const dispatch = useDispatch();
   const onSubmit = (value: any) => {
-    dispatch(postRecomendationAction({ ...value, patient: 1 }));
+    dispatch(
+      postRecomendationAction({
+        ...value,
+        patient: Number(sessionStorage.getItem('id')),
+      })
+    );
     console.log(value);
   };
   return (

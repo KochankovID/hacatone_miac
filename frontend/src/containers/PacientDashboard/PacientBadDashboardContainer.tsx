@@ -8,7 +8,7 @@ const PacientDashboardContainer = () => {
   const dispatch = useDispatch();
   const measurementsData = useSelector(getMeasurements);
   useEffect(() => {
-    dispatch(getMeasurmentsAction(140));
+    dispatch(getMeasurmentsAction(Number(sessionStorage.getItem('id'))));
   }, []);
   return <PacientBadDashbordsContent measurementsData={measurementsData} />;
 };

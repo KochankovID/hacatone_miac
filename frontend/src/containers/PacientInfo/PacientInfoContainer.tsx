@@ -7,9 +7,15 @@ import { getMeasurements } from 'store/PacientDashboard/selectors';
 
 const PacientInfoContainer = () => {
   const dispatch = useDispatch();
-  const measurementsData = useSelector(getMeasurements);
+  const measurementsData = useSelector(getMeasurements).sort(
+    (a: any, b: any) => {
+      const bDate: any = new Date(b.created_at);
+      const aDate: any = new Date(a.created_at);
+      return bDate - aDate;
+    }
+  );
   useEffect(() => {
-    dispatch(getMeasurmentsAction(140));
+    dispatch(getMeasurmentsAction(Number(sessionStorage.getItem('id'))));
   }, []);
   return (
     <PacientResultContent>

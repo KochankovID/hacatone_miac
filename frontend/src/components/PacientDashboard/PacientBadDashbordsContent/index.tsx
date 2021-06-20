@@ -16,7 +16,7 @@ const PacientDashbordsContent = ({ measurementsData }: any) => {
     );
   });
   const pulseData = measurementsData.filter(
-    (el: any) => el.pulse > 80 || el.pulse < 60
+    (el: any) => el.pulse > 85 || el.pulse < 60
   );
   const saturationData = measurementsData.filter(
     (el: any) => el.saturation < 95

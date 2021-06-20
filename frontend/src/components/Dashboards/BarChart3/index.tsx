@@ -39,13 +39,18 @@ const BarChart = ({
           colors: {
             ranges: [
               {
-                from: 50,
+                from: 60,
                 to: 84,
                 color: '#25e595',
               },
               {
                 from: 85,
                 to: 150,
+                color: '#e52552',
+              },
+              {
+                from: 0,
+                to: 59,
                 color: '#e52552',
               },
             ],
@@ -76,7 +81,7 @@ const BarChart = ({
     ],
     series: [
       {
-        name: 'Давление',
+        name: 'ЧСС',
         data: data.map((el: any) => el.pulse),
       },
     ],

@@ -5,14 +5,16 @@ import RouteWrapper from 'router/RouteWrapper';
 import { enumToArray } from 'helpers';
 import { routes } from 'router/routes';
 import queryString from 'query-string';
+import { useDispatch } from 'react-redux';
+import { getPatientInfoAction } from 'store/PacientDashboard/actions';
 
 const App = () => {
+  const dispatch = useDispatch();
   const pagePath = enumToArray(routes);
   const history = useHistory();
-
   const queryParams = queryString.parse(history.location.search);
   const sessionId = sessionStorage.getItem('id');
-  console.log(sessionId);
+
   useEffect(() => {
     if (
       (!sessionId && !queryParams.id) ||
@@ -21,8 +23,10 @@ const App = () => {
       history.push(routes.ERROR);
     } else if (queryParams.id) {
       history.push(routes.PACIENT_ABNORMAL_INFO);
+      dispatch(getPatientInfoAction(Number(queryParams.id)));
       sessionStorage.setItem('id', String(queryParams.id));
     } else {
+      dispatch(getPatientInfoAction(Number(sessionStorage.getItem('id'))));
       history.push(routes.PACIENT_ABNORMAL_INFO);
     }
   }, []);

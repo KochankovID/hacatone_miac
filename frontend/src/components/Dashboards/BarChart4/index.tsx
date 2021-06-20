@@ -32,13 +32,13 @@ const BarChart = ({
             ranges: [
               {
                 from: 50,
-                to: 84,
-                color: '#25e595',
+                to: 94,
+                color: '#e52552',
               },
               {
-                from: 85,
+                from: 95,
                 to: 150,
-                color: '#e52552',
+                color: '#25e595',
               },
             ],
           },

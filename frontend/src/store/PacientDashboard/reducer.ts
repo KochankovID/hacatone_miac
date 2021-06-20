@@ -1,7 +1,10 @@
 import { PatientActions } from "./actions";
 
 const initialState: any = {
-  measurementsData: []
+  measurementsData: [],
+  patientInfo: {
+
+  }
 };
 
 const patientDashboardsReducer = (
@@ -14,6 +17,11 @@ const patientDashboardsReducer = (
         ...state,
         measurementsData: action.payload,
       };
+      case PatientActions.getPatientInfo: 
+      return{
+        ...state,
+        patientInfo: action.payload
+      }
     default:
       return state;
   }
