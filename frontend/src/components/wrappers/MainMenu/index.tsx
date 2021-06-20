@@ -23,10 +23,10 @@ const MainMenu = () => {
           title="Информация о пациенте"
         >
           <Menu.Item key="1">
-            <Link to="/pacient-info"> Аномальные показания</Link>
+            <Link to={routes.PACIENT_ABNORMAL_INFO}> Аномальные показания</Link>
           </Menu.Item>
           <Menu.Item key="2">
-            <Link to="/pacient-info"> Все показания</Link>
+            <Link to={routes.PACIENT_INFO}> Все показания</Link>
           </Menu.Item>
         </SubMenu>
         <SubMenu

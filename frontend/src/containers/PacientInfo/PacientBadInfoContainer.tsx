@@ -5,9 +5,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getMeasurmentsAction } from 'store/PacientDashboard/actions';
 import { getMeasurements } from 'store/PacientDashboard/selectors';
 
-const PacientInfoContainer = () => {
+const PacientBadInfoContainer = () => {
   const dispatch = useDispatch();
-  const measurementsData = useSelector(getMeasurements);
+  const measurementsData = useSelector(getMeasurements).filter(
+    (el: any) =>
+      el.pressure_high > 130 ||
+      el.pressure_high < 110 ||
+      el.pressure_low < 70 ||
+      el.pressure_low > 85 ||
+      el.pulse > 80 ||
+      el.pulse < 60 ||
+      el.saturation < 95
+  );
   useEffect(() => {
     dispatch(getMeasurmentsAction(1));
   }, []);
@@ -21,4 +30,4 @@ const PacientInfoContainer = () => {
   );
 };
 
-export default PacientInfoContainer;
+export default PacientBadInfoContainer;
