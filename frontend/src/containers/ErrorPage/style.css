@@ -1,0 +1,11 @@
+.error-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 45vh;
+}
+
+.error-text {
+  font-size: 26px;
+}

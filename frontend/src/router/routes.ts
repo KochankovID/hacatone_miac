@@ -8,4 +8,5 @@ export enum routes {
     PACIENT_DASHBOARD = '/pacient-dashboard',
     NOT_GOOD_DASHBOARD = '/pacient-abnormal-dashboard',
     RECOMENDATION = '/recomendation',
+    ERROR = '/error-page',
 }

@@ -1,30 +1,30 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Switch, useHistory } from 'react-router-dom';
 import Pages from 'router/Pages';
 import RouteWrapper from 'router/RouteWrapper';
 import { enumToArray } from 'helpers';
 import { routes } from 'router/routes';
-import refreshToken from 'services/refreshToken';
-import { useSelector } from 'react-redux';
-import { getUserToken } from 'store/AuthData/selectors';
-import myHistory from 'myHistory';
-// import 'assets/scss/main.scss';
-// import 'assets/scss/normalize.scss';
+import queryString from 'query-string';
 
 const App = () => {
   const pagePath = enumToArray(routes);
   const history = useHistory();
-  const token = useSelector(getUserToken);
+
+  const queryParams = queryString.parse(history.location.search);
+  const sessionId = sessionStorage.getItem('id');
+  console.log(sessionId);
   useEffect(() => {
-    if (!token) {
-      history.push(routes.AUTH);
+    if (!sessionId && !queryParams.id) {
+      history.push(routes.ERROR);
+    } else {
+      history.push(routes.PACIENT_ABNORMAL_INFO);
+      sessionStorage.setItem('id', String(queryParams.id));
     }
   }, []);
-  // refreshToken();
   return (
     <Switch>
       <RouteWrapper exact path={pagePath}>
-        <Pages />
+        <Pages id={queryParams.id} sessionId={sessionId} />
       </RouteWrapper>
       {/* <RouteWrapper path={['*']} component={NotFoundPage} /> */}
     </Switch>
