@@ -12,6 +12,8 @@ class UserFactory(DjangoModelFactory):
     email = factory.Faker('email')
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
+    created_at = factory.Faker('date_between', start_date='-30d', end_date='today')
+    updated_at = created_at
 
 
 class SuperUserFactory(DjangoModelFactory):

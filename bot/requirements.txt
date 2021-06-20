@@ -1,1 +1,2 @@
 pytelegrambotapi==3.7.9
+django-environ==0.4.5

@@ -54,6 +54,13 @@ services:
     networks:
       - miac
 
+  bot:
+    build: ./bot/
+    environment:
+      - TG_TOKEN=${TG_TOKEN}
+    networks:
+      - miac
+
 networks:
   miac:
     driver: bridge

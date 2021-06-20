@@ -22,7 +22,6 @@ class Command(BaseCommand):
         self.stdout.write("Creating superuser")
         SuperUserFactory()
 
-        people = []
         for _ in range(NUM_USERS):
             username_gen = rstr.xeger('^\d{3}-\d{3}-\d{3}-\d{2}$')
             UserFactory(username=username_gen)
