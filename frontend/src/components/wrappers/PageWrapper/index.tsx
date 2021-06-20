@@ -1,5 +1,6 @@
 import MainMenu from '../MainMenu';
 import './style.css';
+import logo from './photo_2021-06-19_14-47-01.jpg';
 
 const PageWrapper = (props: any) => {
   const { children } = props;
@@ -9,7 +10,9 @@ const PageWrapper = (props: any) => {
       <header className="header">
         <div className="header__container">
           <div className="logo" />
-          <div className="header__menu" />
+          <div className="header__menu">
+            <img width="100%" src={logo} alt="logo" />
+          </div>
         </div>
       </header>
       <MainMenu />

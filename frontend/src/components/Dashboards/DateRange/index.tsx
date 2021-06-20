@@ -1,9 +1,20 @@
 import 'react-google-flight-datepicker/dist/main.css';
 import { RangeDatePicker } from 'react-google-flight-datepicker';
+import { getPeriodMeasurmentsAction } from 'store/PacientDashboard/actions';
+import { useDispatch } from 'react-redux';
 
 const DateRange = () => {
+  const dispatch = useDispatch();
   const onDateChange = (ranstartDate: any, endDateges: any) => {
-    console.log(ranstartDate, endDateges);
+    if (ranstartDate && endDateges) {
+      dispatch(
+        getPeriodMeasurmentsAction({
+          id: 140,
+          start: ranstartDate,
+          end: endDateges,
+        })
+      );
+    }
     // {
     //   selection: {
     //     startDate: [native Date Object],
@@ -14,8 +25,6 @@ const DateRange = () => {
 
   return (
     <RangeDatePicker
-      startDate={new Date()}
-      endDate={new Date()}
       onChange={(startDate: any, endDate: any) =>
         onDateChange(startDate, endDate)
       }

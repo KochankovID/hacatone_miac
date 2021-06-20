@@ -17,7 +17,7 @@ const RecomendationContainer = () => {
     }
   );
   useEffect(() => {
-    dispatch(getRecomendationAction(1));
+    dispatch(getRecomendationAction(140));
   }, []);
   return (
     <>

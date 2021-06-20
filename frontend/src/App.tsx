@@ -14,15 +14,17 @@ const App = () => {
   const sessionId = sessionStorage.getItem('id');
   console.log(sessionId);
   useEffect(() => {
-    // if (
-    //   (!sessionId && !queryParams.id) ||
-    //   (sessionId === 'undefined' && !queryParams.id)
-    // ) {
-    //   history.push(routes.ERROR);
-    // } else {
-    //   history.push(routes.PACIENT_ABNORMAL_INFO);
-    //   sessionStorage.setItem('id', String(queryParams.id));
-    // }
+    if (
+      (!sessionId && !queryParams.id) ||
+      (sessionId === 'undefined' && !queryParams.id)
+    ) {
+      history.push(routes.ERROR);
+    } else if (queryParams.id) {
+      history.push(routes.PACIENT_ABNORMAL_INFO);
+      sessionStorage.setItem('id', String(queryParams.id));
+    } else {
+      history.push(routes.PACIENT_ABNORMAL_INFO);
+    }
   }, []);
   return (
     <Switch>
