@@ -13,7 +13,7 @@ SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = ['10.11.0.108', '127.0.0.1']
+ALLOWED_HOSTS = ['10.11.0.108', '127.0.0.1', '84.252.131.194']
 
 INTERNAL_IPS = [
     '127.0.0.1',
@@ -113,7 +113,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
