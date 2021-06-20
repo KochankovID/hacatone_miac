@@ -17,11 +17,12 @@ export const getRecomendationAction = (id: number) => {
   };
 };
 
-export const postRecomendationAction = (id: number) => {
+export const postRecomendationAction = (value:{text: string, doctor: string, patient: number}) => {
   return async (dispatch: any) => {
     try {
-      const { data } = await axios.get(`${baseUrl}/recomendations/${id}/`);
-      dispatch({ type: RecomendationActions.postRecomendation, payload: data });
+      await axios.post(`${baseUrl}/recomendation/`, value);
+      dispatch(getRecomendationAction(value.patient))
+      // dispatch({ type: RecomendationActions.postRecomendation, payload: data });
     } catch (e) {
       console.log(e);
     }

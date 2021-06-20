@@ -9,7 +9,13 @@ import './style.css';
 
 const RecomendationContainer = () => {
   const dispatch = useDispatch();
-  const recomendationData = useSelector(getRecomendations);
+  const recomendationData = useSelector(getRecomendations).sort(
+    (a: any, b: any) => {
+      const bDate: any = new Date(b.created_at);
+      const aDate: any = new Date(a.created_at);
+      return bDate - aDate;
+    }
+  );
   useEffect(() => {
     dispatch(getRecomendationAction(1));
   }, []);

@@ -1,29 +1,30 @@
 import { Button } from 'antd';
 import { Formik } from 'formik';
 import { Form, Input } from 'formik-antd';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { postRecomendationAction } from 'store/RecomendationData/actions';
 import './style.css';
 
 const RecomendationForm = () => {
+  const dispatch = useDispatch();
   const onSubmit = (value: any) => {
+    dispatch(postRecomendationAction({ ...value, patient: 1 }));
     console.log(value);
   };
   return (
     <div className="auth-wrapper">
       <div className="form-wrapper">
-        <Formik
-          initialValues={{ recomend: '', password: '' }}
-          onSubmit={onSubmit}
-        >
+        <Formik initialValues={{ text: '', doctor: '' }} onSubmit={onSubmit}>
           <Form>
-            <label htmlFor="firstName">Сообщение</label>
+            <label htmlFor="text">Сообщение</label>
             <Input.TextArea
               id="recomend"
-              name="firstName"
+              name="text"
               placeholder="Введите сообщение"
             />
-            <label htmlFor="lastName">Имя доктора</label>
-            <Input id="lastName" name="lastName" placeholder="Введите имя" />
+            <label htmlFor="doctor">Имя доктора</label>
+            <Input id="doctor" name="doctor" placeholder="Введите имя" />
 
             <Button htmlType="submit" style={{ marginTop: 20 }}>
               Отправить
